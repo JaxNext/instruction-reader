@@ -9,4 +9,15 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     // '@vueuse/sound/nuxt',
   ],
+  runtimeConfig: {
+    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
+    public: {
+      apiBase: '/api',
+    }
+  },
+  nitro: {
+    firebase: {
+      gen: 2
+    }
+  }
 })

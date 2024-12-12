@@ -32,7 +32,7 @@ async function handleImgChange(e: Event) {
 }
 async function uploadImg(imgBase64: string) {
   emit('change', imgBase64)
-  const res = await $fetch('/api/chatV2/img', {
+  const res = await $fetch('/api/img', {
     method: 'POST',
     body: {
       imgBase64
