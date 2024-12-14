@@ -51,7 +51,7 @@ async function uploadAudio(blob: Blob) {
   reader.readAsDataURL(blob)
   await new Promise((resolve) => {
     reader.onload = async () => {
-      const res = await $fetch('/api/chatV2/audio', {
+      const res = await $fetch('/api/audio', {
         method: 'POST',
         body: {
           audioBase64: reader.result,
@@ -77,7 +77,6 @@ async function startRecord() {
     try {
       await initRecorder()
     } catch (error) {
-      console.log('Recording Error', error);
       return
     }
   }

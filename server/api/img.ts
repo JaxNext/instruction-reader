@@ -18,11 +18,9 @@ export default defineEventHandler(async (event) => {
 
     const ocrResArray: string[] = []
     detections?.forEach(text => {
-      console.log(text.description);
       ocrResArray.push(text.description ?? '')
     })
     ocrResText = ocrResArray.join('\n')
-    
     const vecRes = await vectorizeDoc(ocrResText)
     storeId = vecRes.storeId
   } catch (error) {
